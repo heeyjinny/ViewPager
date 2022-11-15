@@ -12,24 +12,24 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 //class FragmentAdapter에 인터페이스를 implement함
 class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
-    //3
+    //2
     //화면에 표시해줄 아이템의 목록 변수로 만들고 초기화
     //메뉴로 사용하는 뷰페이저의 화면 아이템은 중간에 개수가 늘지 않고 처음 개수 그대로 사용(listOf())
     var fragmentList = listOf<Fragment>()
 
-    //2
+    //3
     //상속하는 FragmentStateAdapter의 필수 메서드
     //createFragment() : 현재 페이지의 포지션이 파라미터로 넘어오고
     //포지션에 해당하는 위치의 프래그먼트를 만들어 안드로이드에 반환
     //getItemCount() : 어탭터가 화면에 보여줄 전체 프래그먼트의 개수 반환
     override fun getItemCount(): Int {
-        //2-1
+        //3-1
         //페이지의 개수 결정을 위한 프래그먼트 개수 리턴
         return fragmentList.size
     }
 
     override fun createFragment(position: Int): Fragment {
-        //2-2
+        //3-2
         //페이지 요청 시 getItem으로 페이지의 포지션 값이 넘어옴
         //넘어온 포지션 값을 이용하여 프래그먼트 목록 중 현재 포지션 프래그먼트 1개 리턴
         //return fragmentList.get(position)
@@ -37,7 +37,7 @@ class FragmentAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter
         return fragmentList[position]
     }
 
-    //3
+    //4
     //어댑터를 이용해 만들어두었던 프래그먼트들을 액티비티에서 연결
     //MainActivity.kt...
 
