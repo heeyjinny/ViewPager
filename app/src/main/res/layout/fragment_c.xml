@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentC">
+<!--  tools:context="" 의 이름을 각 프래그먼트 이름에 맞게 수정  -->
+
+<!--  텍스트 수정  -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="프래그먼트C"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
+</FrameLayout>

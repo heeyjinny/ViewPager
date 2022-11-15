@@ -6,13 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+<!--  뷰페이저 배치: ViewPager2사용, id: viewPager  -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+<!--  뷰페이저 배치 후 프래그먼트를 뷰 페이저에 보여주기위해 사용하는 어댑터 생성  -->
+<!--  java디렉터리 밑 패키지명 우클릭 - New Kotlin File/Class -->
+<!--  Class로 이름 FragmentAdapter생성  -->
+
+<!--  탭 레이아웃 배치: TabLayout, id: tabLayout  -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+<!--  MainActivity.kt 에서 TabLayout과 ViewPager2 연결  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
